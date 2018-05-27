@@ -1,0 +1,19 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "A simple discord bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Abhi Patel",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "firebase-admin": "^5.12.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1"
+  }
+}
