@@ -131,6 +131,7 @@ client.on('message', (message) => {
             }else{
                 message.channel.sendMessage(message.author + " " + events[randMessage] + " and earned " + " $"+randMoney );
                 Userdata[message.author.id].Amount += randMoney;
+                
                                 
             } 
                 fs.writeFile('./Userdata.json', JSON.stringify(Userdata), err => {
@@ -153,6 +154,8 @@ client.on('message', (message) => {
                 }
                 else{
                         if(n>chance){
+                            Userdata[message.author.id].Amount += Userdata[toRob].Amount;
+                            Userdata[message.author.id].CrimeAmount +=  Userdata[toRob].Amount;
                             Userdata[toRob].Amount = 0;
                             let robMsg = new discord.RichEmbed()
                             .setColor(" #ff2500")
@@ -161,6 +164,7 @@ client.on('message', (message) => {
                             
                              message.channel.send(robMsg);
                             Userdata[toRob].TimesRobbed += 1;
+                            
                         }else{
                             message.channel.sendMessage("You were caught robbing!")
                         }
